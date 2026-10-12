@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171717">
+  <meta name="description" content="A beautifully simple Tic Tac Toe game. Challenge a friend or take on the computer.">
+  <title>Cross & Circle — Tic Tac Toe</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Cross and Circle home">
+      <span class="brand-symbol" aria-hidden="true">×<span>○</span></span>
+      <span>cross<span class="brand-and">&</span>circle</span>
+    </a>
+    <span class="header-note"><span class="live-dot"></span> A little friendly competition</span>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="eyebrow"><span></span> THE CLASSIC, REIMAGINED</div>
+      <h1>Small board.<br><span>Big rivalry.</span></h1>
+      <p>Three in a row. Endless “one more round.”</p>
+    </section>
+
+    <section class="game-layout" aria-label="Tic Tac Toe game">
+      <aside class="settings panel">
+        <div class="section-label">MAKE YOUR MOVE</div>
+        <h2>Pick your opponent</h2>
+        <div class="mode-selector" aria-label="Game mode">
+          <button class="mode-button active" data-mode="computer" aria-pressed="true">
+            <span class="mode-icon" aria-hidden="true">▣</span>
+            <span><strong>Computer</strong><small>Your next worthy rival</small></span>
+            <span class="radio-indicator"></span>
+          </button>
+          <button class="mode-button" data-mode="friend" aria-pressed="false">
+            <span class="mode-icon" aria-hidden="true">♧</span>
+            <span><strong>A friend</strong><small>Same screen. Real rivalry.</small></span>
+            <span class="radio-indicator"></span>
+          </button>
+        </div>
+        <div id="difficulty-section">
+          <label class="section-label" for="difficulty">CHALLENGE LEVEL</label>
+          <select id="difficulty">
+            <option value="easy">Easy · Just warming up</option>
+            <option value="medium" selected>Medium · Bring your A-game</option>
+            <option value="hard">Hard · Unbeatable</option>
+          </select>
+        </div>
+        <div class="rule-note">
+          <span class="mini-marks" aria-hidden="true">× ○</span>
+          <p>Take turns. Connect three.<br>Horizontal, vertical, or diagonal.</p>
+        </div>
+      </aside>
+
+      <div class="board-column">
+        <div class="turn-status" id="status" role="status" aria-live="polite">
+          <span class="status-mark x" id="status-mark">×</span>
+          <span id="status-text">Your turn. Make it count.</span>
+          <span class="turn-dot" id="turn-dot"></span>
+        </div>
+        <div class="board" id="board" aria-label="Game board">
+          <button class="cell" data-index="0" aria-label="Row 1, column 1, empty"></button>
+          <button class="cell" data-index="1" aria-label="Row 1, column 2, empty"></button>
+          <button class="cell" data-index="2" aria-label="Row 1, column 3, empty"></button>
+          <button class="cell" data-index="3" aria-label="Row 2, column 1, empty"></button>
+          <button class="cell" data-index="4" aria-label="Row 2, column 2, empty"></button>
+          <button class="cell" data-index="5" aria-label="Row 2, column 3, empty"></button>
+          <button class="cell" data-index="6" aria-label="Row 3, column 1, empty"></button>
+          <button class="cell" data-index="7" aria-label="Row 3, column 2, empty"></button>
+          <button class="cell" data-index="8" aria-label="Row 3, column 3, empty"></button>
+        </div>
+        <button class="new-round" id="new-round"><span aria-hidden="true">↻</span> New round <span class="shortcut">N</span></button>
+        <p class="board-caption">A classic for a reason.</p>
+      </div>
+
+      <aside class="score-panel panel">
+        <div class="score-heading"><span class="section-label">THE SCOREBOARD</span><span class="session-tag">LOCAL</span></div>
+        <h2>A rivalry in numbers</h2>
+        <div class="score-card player-x">
+          <div class="score-player"><span class="score-mark" aria-hidden="true">×</span><div><strong id="x-name">You</strong><small>PLAYER X</small></div></div>
+          <span class="score-number" id="score-x">0</span>
+        </div>
+        <div class="score-card player-o">
+          <div class="score-player"><span class="score-mark" aria-hidden="true">○</span><div><strong id="o-name">Computer</strong><small>PLAYER O</small></div></div>
+          <span class="score-number" id="score-o">0</span>
+        </div>
+        <div class="draw-score"><span>Perfectly matched <small>Draws</small></span><strong id="score-draw">0</strong></div>
+        <button id="reset-scores" class="reset-button"><span aria-hidden="true">↺</span> Reset scores</button>
+        <div class="score-footer"><span aria-hidden="true">✦</span> Good games. Great rematches.</div>
+      </aside>
+    </section>
+    <footer><span>Less scrolling. More playing.</span><span>Built for a little break <span class="footer-star">✦</span></span></footer>
+  </main>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
